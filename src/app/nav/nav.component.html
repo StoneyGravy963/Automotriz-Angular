@@ -1,0 +1,47 @@
+<nav class="bg-gradient-to-r from-[#C5CAE9] via-[#D1C4E9] to-[#bba897] border-b border-gray-300 px-4 py-2 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" class="h-10 w-10" />
+      <span class="text-2xl font-bold text-gray-800">Autos</span>
+    </div>
+  
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="text-gray-700 focus:outline-none">
+        @if (!isMenuOpen) {
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        }
+      </button>
+    </div>
+  
+    <div class="hidden md:flex space-x-8 items-center">
+      <a [routerLink]="['/home']" routerLinkActive="active-link" class="nav-link">Home</a>
+      <a [routerLink]="['/about']" routerLinkActive="active-link" class="nav-link">About</a>
+      <a [routerLink]="['/services']" routerLinkActive="active-link" class="nav-link">Services</a>
+      <a [routerLink]="['/autos']" routerLinkActive="active-link" class="nav-link">Autos</a>
+      <a [routerLink]="['/login']">
+        <button mat-raised-button color="primary" class="btn-primary">
+          Login
+        </button>
+      </a>
+    </div>
+  </nav>
+  
+  @if (isMenuOpen) {
+    <div class="md:hidden flex flex-col space-y-4 px-6 py-4 bg-gradient-to-r from-[#E8EAF6] via-[#EDE7F6] to-[#FCE4EC] shadow-lg rounded-b-lg mt-2">
+      <a [routerLink]="['/home']" routerLinkActive="active-link" class="nav-link" (click)="toggleMenu()">Home</a>
+      <a [routerLink]="['/about']" routerLinkActive="active-link" class="nav-link" (click)="toggleMenu()">About</a>
+      <a [routerLink]="['/services']" routerLinkActive="active-link" class="nav-link" (click)="toggleMenu()">Services</a>
+      <a [routerLink]="['/autos']" routerLinkActive="active-link" class="nav-link" (click)="toggleMenu()">Autos</a>
+      <a [routerLink]="['/login']" (click)="toggleMenu()" class="w-full">
+        <button mat-raised-button color="primary" class="btn-primary w-full">
+          Login
+        </button>
+      </a>
+    </div>
+  }
+  
