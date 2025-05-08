@@ -1,0 +1,62 @@
+<section class="p-6">
+    <!-- barra busqueda -->
+    <div class="my-4 max-w-md mx-auto">
+        <div
+            class="flex items-center border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent bg-white">
+            <div class="flex items-center justify-center p-3 text-gray-500">
+                <mat-icon>search</mat-icon>
+            </div>
+            <input matInput class="flex-grow p-2 outline-none border-0 bg-transparent" [(ngModel)]="busqueda"
+                (input)="filtrarAutos()" placeholder="Buscar auto">
+            @if (busqueda) {
+            <button mat-icon-button class="mr-2" (click)="limpiarBusqueda()">
+                <mat-icon>close</mat-icon>
+            </button>
+            }
+        </div>
+    </div>
+
+    <!-- mensaje sin busqueda -->
+    @if (autosFiltrados.length === 0) {
+    <div class="max-w-md mx-auto">
+        <mat-card appearance="outlined" class="bg-yellow-50">
+            <mat-card-content class="flex items-center">
+                <mat-icon class="text-amber-500 mr-2">warning</mat-icon>
+                <span>No se encontraron autos con esos criterios</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    }
+
+    <!-- cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        @for (auto of autosFiltrados; track auto.id) {
+        <mat-card class="h-full mat-elevation-z4">
+            <img mat-card-image [src]="auto.image" [alt]="auto.brand + ' ' + auto.name"
+                class="h-48 object-cover w-full">
+            <mat-card-header>
+                <mat-card-title>{{ auto.brand }} {{ auto.name }}</mat-card-title>
+                <mat-card-subtitle>Año: {{ auto.year }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="mt-2">
+                <div class="flex items-center mb-2">
+                    <mat-icon class="text-gray-500 mr-1 text-sm">palette</mat-icon>
+                    <span class="text-gray-600">Color: {{ auto.color }}</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <mat-icon class="text-gray-500 mr-1 text-sm">attach_money</mat-icon>
+                    <span class="text-lg font-semibold">{{ auto.price | currency }}</span>
+                </div>
+                <mat-divider class="mb-3"></mat-divider>
+                <p class="text-gray-500">{{ auto.description }}</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <a [routerLink]="['/auto', autos.indexOf(auto)]" mat-raised-button color="primary" class="flex items-center">
+                  <mat-icon class="mr-1">info</mat-icon>
+                  DETALLES
+                </a>
+              </mat-card-actions>
+        </mat-card>
+        }
+    </div>
+</section>

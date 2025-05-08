@@ -1,0 +1,48 @@
+<section class="bg-gray-100/80 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-white/80 dark:bg-gray-800/80 shadow-2xl rounded-3xl p-10 grid gap-8 lg:grid-cols-12 items-center">
+        
+        <!-- Texto -->
+        <div class="lg:col-span-7 space-y-6">
+          <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+            Encuentra el coche de tus sueños
+          </h1>
+          <p class="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300">
+            Explora nuestra amplia selección de autos nuevos y seminuevos, cuidadosamente seleccionados para ti
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <!-- Botón Ver Autos -->
+            <a 
+              [routerLink]="['/autos']"
+              class="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl shadow-lg transform transition hover:scale-105 hover:shadow-2xl"
+              style="background: linear-gradient(to right, var(--primary-color), var(--secondary-color));"
+            >
+              Ver Autos
+              <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+  
+            <!-- Botón Sobre Nosotros -->
+            <a 
+              [routerLink]="['/about']"
+              class="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-gray-800 dark:text-white border border-gray-400 dark:border-gray-600 rounded-xl shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 transition transform hover:scale-105"
+            >
+              Sobre Nosotros
+            </a> 
+          </div>
+        </div>
+  
+        <!-- Imagen -->
+        <div class="lg:col-span-5 flex justify-center">
+          <img src="../autohero1.png" 
+            alt="Coche nuevo" 
+            class="rounded-2xl shadow-xl object-cover w-full h-full max-h-[500px]"
+          >
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  

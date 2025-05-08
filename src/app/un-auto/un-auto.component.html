@@ -1,0 +1,91 @@
+><div class="container mx-auto p-4 lg:p-8">
+    @if (auto) {
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- cabecerar -->
+        <div class="relative h-64 lg:h-96">
+          <img 
+            [src]="auto.image" 
+            [alt]="auto.brand + ' ' + auto.name"
+            class="w-full h-full object-cover"
+          >
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+            <h1 class="text-white text-3xl font-bold">{{ auto.brand }} {{ auto.name }}</h1>
+            <p class="text-white/90">{{ auto.year }} · {{ auto.color }}</p>
+          </div>
+        </div>
+        
+        <!-- informacion -->
+        <div class="p-6">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+              <mat-chip-set>
+                <mat-chip color="primary">{{ auto.brand }}</mat-chip>
+                <mat-chip color="accent">{{ auto.year }}</mat-chip>
+                <mat-chip>{{ auto.color }}</mat-chip>
+              </mat-chip-set>
+            </div>
+            <div class="flex items-center">
+              <mat-icon color="primary" class="mr-2">attach_money</mat-icon>
+              <span class="text-2xl font-bold text-primary">{{ auto.price | currency }}</span>
+            </div>
+          </div>
+          
+          <mat-divider class="mb-6"></mat-divider>
+          
+          <!-- desc -->
+          <mat-card appearance="outlined" class="mb-6 p-4">
+            <mat-card-header>
+              <mat-icon mat-card-avatar>description</mat-icon>
+              <mat-card-title>Descripción</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="mt-4">
+              <p class="text-gray-700">{{ auto.description }}</p>
+            </mat-card-content>
+          </mat-card>
+          
+          <!-- caracteristicas -->
+          <h3 class="text-xl font-bold mb-4">Características técnicas</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="flex items-center">
+              <mat-icon class="mr-2 text-gray-500">speed</mat-icon>
+              <span>Motor: {{ auto.year > 2020 ? '2.5L Turbo' : '2.0L' }}</span>
+            </div>
+            <div class="flex items-center">
+              <mat-icon class="mr-2 text-gray-500">local_gas_station</mat-icon>
+              <span>Combustible: Gasolina</span>
+            </div>
+            <div class="flex items-center">
+              <mat-icon class="mr-2 text-gray-500">airline_seat_recline_normal</mat-icon>
+              <span>Asientos: 5</span>
+            </div>
+            <div class="flex items-center">
+              <mat-icon class="mr-2 text-gray-500">settings</mat-icon>
+              <span>Transmisión: Automática</span>
+            </div>
+          </div>
+          
+          <!-- Botones de acción -->
+          <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3">
+            <button mat-raised-button color="accent" class="flex items-center justify-center">
+              <mat-icon class="mr-1">phone</mat-icon> CONTACTAR
+            </button>
+            <button mat-raised-button color="primary" class="flex items-center justify-center">
+              <mat-icon class="mr-1">shopping_cart</mat-icon> RESERVAR
+            </button>
+            <a routerLink="/busqueda" mat-button class="flex items-center justify-center">
+              <mat-icon class="mr-1">arrow_back</mat-icon> VOLVER
+            </a>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <mat-card appearance="outlined" class="text-center p-8">
+        <mat-icon class="text-5xl text-gray-400 mb-4">error_outline</mat-icon>
+        <h2 class="text-2xl font-bold mb-2">Auto no encontrado</h2>
+        <p class="mb-4">El auto que buscas no está disponible o no existe.</p>
+        <a routerLink="/busqueda" mat-raised-button color="primary">
+          Volver a la búsqueda
+        </a>
+      </mat-card>
+    }
+  </div>
