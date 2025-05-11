@@ -1,13 +1,13 @@
 import {
+  BidiModule
+} from "./chunk-FSVPREI4.js";
+import {
   Platform,
   _CdkPrivateStyleLoader,
   _bindEventWithOptions,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-DAVDBWUD.js";
-import {
-  BidiModule
-} from "./chunk-FSVPREI4.js";
+} from "./chunk-T2HCFUYU.js";
 import {
   DOCUMENT
 } from "./chunk-J3IORHOC.js";
@@ -3115,8 +3115,6 @@ var MatCommonModule = class _MatCommonModule {
 })();
 
 export {
-  normalizePassiveListenerOptions,
-  _getEventTarget,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   BACKSPACE,
@@ -3126,6 +3124,8 @@ export {
   UP_ARROW,
   DOWN_ARROW,
   DELETE,
+  _getEventTarget,
+  normalizePassiveListenerOptions,
   FocusMonitor,
   _VisuallyHiddenLoader,
   ObserversModule,
@@ -3134,4 +3134,4 @@ export {
   FocusKeyManager,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-YOMPCSK4.js.map
+//# sourceMappingURL=chunk-636UQLXC.js.map
