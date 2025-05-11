@@ -1,0 +1,39 @@
+<div class="contenedor">
+  <h2>Formulario de Opinión</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    
+    <input type="email" formControlName="email" placeholder="Email" />
+    <div class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].touched" style="color:red;">
+      Ingresa un email válido
+    </div>
+
+    
+    <input type="number" formControlName="age" placeholder="Edad" />
+    <div class="error" *ngIf="form.controls['age'].invalid && form.controls['age'].touched" style="color:red;">
+      Solo las personas mayores a 18 pueden opinar
+    </div>
+
+    
+    <label>
+      <input type="radio" value="Masculino" formControlName="gender" /> Masculino
+    </label>
+    <label>
+      <input type="radio" value="Femenino" formControlName="gender" /> Femenino
+    </label>
+    <label>
+      <input type="radio" value="Otro" formControlName="gender" /> Otro
+    </label>
+    <div class="error" *ngIf="form.controls['gender'].invalid && form.controls['gender'].touched" style="color:red;">
+      Selecciona un género
+    </div>
+
+    <!-- Opinión -->
+    <textarea formControlName="opinion" placeholder="Escribe tu opinión aquí"></textarea>
+    <div class="error" *ngIf="form.controls['opinion'].invalid && form.controls['opinion'].touched" style="color:red;">
+      La opinión es obligatoria
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+  </form>
+</div>
