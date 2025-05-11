@@ -1,6 +1,6 @@
 import {
   isPlatformBrowser
-} from "./chunk-J3IORHOC.js";
+} from "./chunk-3GIDUS2D.js";
 import {
   ApplicationRef,
   ElementRef,
@@ -159,4 +159,4 @@ export {
   coerceNumberProperty,
   coerceElement
 };
-//# sourceMappingURL=chunk-T2HCFUYU.js.map
+//# sourceMappingURL=chunk-C7XHZOJE.js.map
