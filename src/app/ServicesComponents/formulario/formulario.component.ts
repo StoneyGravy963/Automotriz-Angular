@@ -19,9 +19,7 @@ export class FormularioComponent {
   };
   
   enviarFormulario() {
-
-    const nombreValido = /^[a-zA-ZÀ-ÿ\s]+$/.test(this.formData.nombre);
-    
+  const nombreValido = /^[a-zA-ZÀ-ÿ\s]+$/.test(this.formData.nombre);
 
     if (!nombreValido) {
       alertify.error('El nombre solo puede contener letras y espacios');
@@ -32,34 +30,40 @@ export class FormularioComponent {
     const fechaSeleccionada = new Date(this.formData.cita);
     const anioActual = hoy.getFullYear();
 
-  
-  if (fechaSeleccionada <= hoy) {
-    alertify.error('La fecha debe ser posterior a la actual');
-    return;
-  }
+    if (fechaSeleccionada <= hoy) {
+      alertify.error('La fecha debe ser posterior a la actual');
+      return;
+    }
 
+    if (fechaSeleccionada.getFullYear() !== anioActual) {
+      alertify.error('La cita debe ser en el mismo año');
+      return;
+    }
 
-  if (fechaSeleccionada.getFullYear() !== anioActual) {
-    alertify.error('La cita debe ser en el mismo año');
-    return;
-  }
+    if (this.formData.auto === 'default') {
+      alertify.error('Debe seleccionar un servicio válido');
+      return;
+    }
 
-  
-  if (this.formData.auto === 'default') {
-    alertify.error('Debe seleccionar un servicio válido');
-    return;
-  }
+    const datosAGuardar = {
+      nombre: this.formData.nombre,
+      servicio: this.formData.auto,
+      cita: this.formData.cita,
+      acepta: this.formData.acepta
+    };
 
-    
+    const reservasExistentes = JSON.parse(localStorage.getItem('reservasAutos') || '[]');
+    reservasExistentes.push(datosAGuardar);
+    localStorage.setItem('reservasAutos', JSON.stringify(reservasExistentes));
 
-  const datosAGuardar = {
-    nombre: this.formData.nombre,
-    servicio: this.formData.auto,
-    cita: this.formData.cita,
-    acepta: this.formData.acepta
-  };
+    alertify.success("Reserva guardada exitosamente.");
 
-  localStorage.setItem('reservaAuto', JSON.stringify(datosAGuardar));
-  alertify.success("Datos guardados exitosamente.");
+    // Limpia el formulario si deseas
+    this.formData = {
+      nombre: '',
+      auto: '',
+      cita: '',
+      acepta: false
+    };
   }
 }
