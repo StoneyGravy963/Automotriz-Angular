@@ -1,0 +1,40 @@
+<div class="Formulario">
+  <form #formRef="ngForm" (ngSubmit)="enviarFormulario()">
+    <fieldset>
+      <div class="label-input">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" [(ngModel)]="formData.nombre" required>
+      </div>
+
+      <div class="label-input">
+        <label for="cita">Día de la entrega</label>
+        <input id="cita" name="cita" type="date" [(ngModel)]="formData.cita" required>
+      </div>
+
+<div class="label-input">
+        <label for="auto">Auto</label>
+        <select id="auto" name="auto" [(ngModel)]="formData.auto" required>
+          <option value="default">--Seleccione una opcion--</option>
+          <option value="HondaCivic">Honda Civic</option>
+          <option value="ToyotaCorolla">Toyota Corolla</option>
+          <option value="FordMustang">Ford Mustag</option>
+          <option value="TeslaModel3">Tesla Model 3</option>
+          <option value="HyundaiTucson">Hyundai Tucson</option>
+          <option value="BMWX3">BMW X3</option>
+          <option value="Audi A3">Audi A3</option>
+          <option value="JeepWrangler">Jeep Wrangler</option>
+          <option value="VolkswagenGolf">Volkswagen Golf</option>
+          <option value="MazdACX-5">Mazda CX-5</option>
+        </select>
+      </div>
+
+      
+      <div class="label-input">
+        <input id="acepta" type="checkbox" name="terminos" [(ngModel)]="formData.acepta">
+        <label for="acepta">Acepto términos y condiciones</label>
+      </div>
+
+      <button class="boton-buscar" id="buscar" type="submit" [disabled]="!formRef.valid">Enviar</button>
+    </fieldset>
+  </form>
+</div>
