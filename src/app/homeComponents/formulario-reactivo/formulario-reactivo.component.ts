@@ -22,13 +22,17 @@ export class FormularioReactivoComponent {
   }
 
   onSubmit(): void {
-    if (this.form.valid) {
-    
-      const formData = this.form.value;
-      localStorage.setItem('formularioOpinion', JSON.stringify(formData));
-      console.log('Datos del formulario guardados en localStorage:', formData);
+  if (this.form.valid) {
+    const nuevaOpinion = this.form.value;
 
-      
-    }
+    const opinionesGuardadas = JSON.parse(localStorage.getItem('formulariosOpinion') || '[]');
+    opinionesGuardadas.push(nuevaOpinion);
+
+    localStorage.setItem('formulariosOpinion', JSON.stringify(opinionesGuardadas));
+    console.log('Formulario guardado correctamente:', nuevaOpinion);
+
+    
+    this.form.reset();
   }
+}
 }
