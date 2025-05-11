@@ -1,0 +1,25 @@
+.material-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  box-shadow: 5px 5px 15px rgba(5, 77, 212, 0.103);
+  margin-top: 20px; /* Agrega un margen superior para separar las cards de la barra de búsqueda */
+}
+
+.sucursal-card {
+  width: 320px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.205);
+}
+
+mat-card-header {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  border-radius: 3px;
+}
