@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="contenedor">
+  <h1>Inicia Secion</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName="email" placeholder="Email" />
+    <div class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].touched" style="color:red;">
+      Ingresa un email válido
+    </div>
+  
+    <input type="password" formControlName="password" placeholder="Contraseña" />
+    <div class="error" *ngIf="form.controls['password'].invalid && form.controls['password'].touched" style="color:red;">
+      Mínimo 8 caracteres
+    </div>
+  
+    
+  
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+  </form>
+  
+</div>

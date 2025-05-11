@@ -4398,6 +4398,7 @@ function provideClientHydration(...features) {
 var VERSION = new Version("19.2.9");
 
 export {
+  HttpClient,
   EVENT_MANAGER_PLUGINS,
   EventManager,
   EventManagerPlugin,
@@ -4413,7 +4414,6 @@ export {
   provideProtractorTestingSupport,
   platformBrowser,
   BrowserModule,
-  HttpClient,
   Meta,
   Title,
   enableDebugTools,
@@ -4472,4 +4472,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-LW3WH5LL.js.map
+//# sourceMappingURL=chunk-6KTGYK7N.js.map

@@ -15,18 +15,17 @@ import {
   ɵɵdefineInjectable
 } from "./chunk-MDE6DXVZ.js";
 
-// node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs
-function coerceNumberProperty(value, fallbackValue = 0) {
-  if (_isNumberValue(value)) {
-    return Number(value);
+// node_modules/@angular/cdk/fesm2022/backwards-compatibility-DHR38MsD.mjs
+function _bindEventWithOptions(renderer, target, eventName, callback, options) {
+  const major = parseInt(VERSION.major);
+  const minor = parseInt(VERSION.minor);
+  if (major > 19 || major === 19 && minor > 0 || major === 0 && minor === 0) {
+    return renderer.listen(target, eventName, callback, options);
   }
-  return arguments.length === 2 ? fallbackValue : 0;
-}
-function _isNumberValue(value) {
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
+  target.addEventListener(eventName, callback, options);
+  return () => {
+    target.removeEventListener(eventName, callback, options);
+  };
 }
 
 // node_modules/@angular/cdk/fesm2022/platform-DmdVEw_C.mjs
@@ -90,17 +89,18 @@ var Platform = class _Platform {
   }], () => [], null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/backwards-compatibility-DHR38MsD.mjs
-function _bindEventWithOptions(renderer, target, eventName, callback, options) {
-  const major = parseInt(VERSION.major);
-  const minor = parseInt(VERSION.minor);
-  if (major > 19 || major === 19 && minor > 0 || major === 0 && minor === 0) {
-    return renderer.listen(target, eventName, callback, options);
+// node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
   }
-  target.addEventListener(eventName, callback, options);
-  return () => {
-    target.removeEventListener(eventName, callback, options);
-  };
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+function _isNumberValue(value) {
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
 }
 
 // node_modules/@angular/cdk/fesm2022/style-loader-Cu9AvjH9.mjs
@@ -153,10 +153,10 @@ var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
 })();
 
 export {
+  _bindEventWithOptions,
+  Platform,
   coerceNumberProperty,
   coerceElement,
-  Platform,
-  _bindEventWithOptions,
   _CdkPrivateStyleLoader
 };
-//# sourceMappingURL=chunk-DAVDBWUD.js.map
+//# sourceMappingURL=chunk-24R3V76P.js.map
