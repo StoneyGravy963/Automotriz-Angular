@@ -1,0 +1,12 @@
+.mechanics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.mechanic-card {
+  width: 250px;
+  text-align: center;
+}

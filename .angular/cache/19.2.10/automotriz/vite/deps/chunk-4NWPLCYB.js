@@ -29755,6 +29755,8 @@ export {
   ConnectableObservable,
   Subject,
   BehaviorSubject,
+  asapScheduler,
+  animationFrameScheduler,
   EMPTY,
   from,
   of,
@@ -30337,4 +30339,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-MDE6DXVZ.js.map
+//# sourceMappingURL=chunk-4NWPLCYB.js.map

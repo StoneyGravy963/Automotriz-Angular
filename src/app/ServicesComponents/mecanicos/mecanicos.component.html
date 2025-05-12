@@ -1,0 +1,9 @@
+<div class="mechanics-container">
+  <mat-card class="mechanic-card" *ngFor="let mecanico of mecanicos">
+    <img mat-card-image [src]="mecanico.foto" alt="Foto de {{mecanico.nombre}}">
+    <mat-card-content>
+      <h3>{{ mecanico.nombre }}</h3>
+      <p>{{ mecanico.especialidad }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
