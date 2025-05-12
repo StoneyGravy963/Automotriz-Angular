@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-carrusel',
-  imports: [],
+  imports: [    ],
   templateUrl: './carrusel.component.html',
   styleUrl: './carrusel.component.css'
 })
