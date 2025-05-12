@@ -6,9 +6,9 @@ export const AUTOS: Auto[] = [
     name: "Civic",
     brand: "Honda",
     year: 2023,
-    color: "Plata",
+    color: "Blanco",
     price: 25000,
-    image: "assets/images/honda-civic.jpg",
+    image: "../honda-civic.jpg",
     description: "Sedán compacto con excelente eficiencia de combustible y tecnología avanzada."
   },
   {
@@ -18,7 +18,7 @@ export const AUTOS: Auto[] = [
     year: 2022,
     color: "Blanco",
     price: 23000,
-    image: "assets/images/toyota-corolla.jpg",
+    image: "../toyota-corolla.jpg",
     description: "Sedán confiable con diseño moderno y gran confort interior."
   },
   {
@@ -28,7 +28,7 @@ export const AUTOS: Auto[] = [
     year: 2021,
     color: "Rojo",
     price: 45000,
-    image: "assets/images/ford-mustang.jpg",
+    image: "../ford-mustang.jpg",
     description: "Muscle car icónico con potente motor V8 y estilo agresivo."
   },
   {
@@ -38,7 +38,7 @@ export const AUTOS: Auto[] = [
     year: 2024,
     color: "Negro",
     price: 48000,
-    image: "assets/images/tesla-model3.jpg",
+    image: "../tesla-model3.jpg",
     description: "Vehículo eléctrico con autonomía superior y tecnología de punta."
   },
   {
@@ -48,7 +48,7 @@ export const AUTOS: Auto[] = [
     year: 2023,
     color: "Azul",
     price: 30000,
-    image: "assets/images/hyundai-tucson.jpg",
+    image: "../hyundai-tucson.jpg",
     description: "SUV compacto con diseño audaz y amplio espacio interior."
   },
   {
@@ -58,7 +58,7 @@ export const AUTOS: Auto[] = [
     year: 2022,
     color: "Gris",
     price: 55000,
-    image: "assets/images/bmw-x3.jpg",
+    image: "../bmw-x3.jpg",
     description: "SUV de lujo con manejo dinámico y acabados premium."
   },
   {
@@ -68,7 +68,7 @@ export const AUTOS: Auto[] = [
     year: 2023,
     color: "Blanco",
     price: 40000,
-    image: "assets/images/audi-a3.jpg",
+    image: "../audi-a3.jpg",
     description: "Sedán compacto premium con tecnología avanzada y diseño elegante."
   },
   {
@@ -78,7 +78,7 @@ export const AUTOS: Auto[] = [
     year: 2021,
     color: "Verde",
     price: 42000,
-    image: "assets/images/jeep-wrangler.jpg",
+    image: "../jeep-wrangler.jpeg",
     description: "Todo terreno robusto ideal para aventuras al aire libre."
   },
   {
@@ -88,7 +88,7 @@ export const AUTOS: Auto[] = [
     year: 2022,
     color: "Negro",
     price: 27000,
-    image: "assets/images/vw-golf.jpg",
+    image: "../vw-golf.jpg",
     description: "Hatchback versátil con gran equilibrio entre confort y rendimiento."
   },
   {
@@ -98,7 +98,7 @@ export const AUTOS: Auto[] = [
     year: 2023,
     color: "Rojo",
     price: 32000,
-    image: "assets/images/mazda-cx5.jpg",
+    image: "../mazda-cx5.jpg",
     description: "SUV compacto con diseño sofisticado y excelente dinámica de conducción."
   }
 ];

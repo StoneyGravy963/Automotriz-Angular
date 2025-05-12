@@ -1,0 +1,48 @@
+.slogan-container {
+  min-width: 240px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+  span {
+    color: var(--primary-color, #3f51b5);
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    position: relative;
+    
+    &.typing {
+      .cursor {
+        animation: blink 0.7s infinite;
+      }
+    }
+    
+    &.fade-out {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing-effect 0.3s ease-in-out;
+}
+
+@keyframes typing-effect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

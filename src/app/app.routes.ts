@@ -6,6 +6,9 @@ import { AutosComponent } from './autos/autos.component';
 import { LoginComponent } from './login/login.component';
 import { UnAutoComponent } from './un-auto/un-auto.component';
 import { BusquedaAutosComponent } from './busqueda-autos/busqueda-autos.component';
+import { PanelControlComponent } from './panel-control/panel-control.component';
+import { authGuard } from './auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -13,6 +16,8 @@ export const routes: Routes = [
     { path: 'services', component: ServicesComponent },
     { path: 'autos', component: AutosComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'dashboard', component: DashboardComponent,canActivate: [authGuard]},
+    { path: 'panel-control', component: PanelControlComponent },
     { path: 'auto/:id', component: UnAutoComponent },
     // { path: '**', redirectTo: 'home' },
     { path: 'busqueda', component: BusquedaAutosComponent },

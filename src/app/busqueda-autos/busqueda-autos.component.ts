@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-busqueda-autos',
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatDividerModule,
     MatChipsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   templateUrl: './busqueda-autos.component.html',
   styleUrl: './busqueda-autos.component.css'
@@ -37,6 +39,8 @@ export class BusquedaAutosComponent {
   busqueda: string = '';
   
   constructor(public servicioAuto: AutoService) {}
+
+
   
   ngOnInit(): void {
     this.autos = this.servicioAuto.getAutos();

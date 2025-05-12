@@ -27,13 +27,18 @@
               }
             ],
             "styles": [
+              "node_modules/flowbite/dist/flowbite.min.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
               "node_modules/alertifyjs/build/css/alertify.min.css",
               "node_modules/alertifyjs/build/css/themes/default.min.css",
               "src/styles.css"
             ],
             "scripts": [
+<<<<<<< HEAD
               "node_modules/alertifyjs/build/alertify.min.js"
+=======
+              "node_modules/flowbite/dist/flowbite.min.js"
+>>>>>>> 9a4ad427d8f9ff787f8ce5e263e6405aa5b5b4e6
             ]
           },
           "configurations": {

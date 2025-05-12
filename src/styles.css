@@ -32,3 +32,38 @@ app-root {
 router-outlet + * {
   flex: 1;
 }
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-container {
+  padding-bottom: 4rem;
+}
+
+
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+}
+
+app-nav {
+  position: fixed;
+  width: 100%;
+  top: 60px;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding-top: 8rem;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
