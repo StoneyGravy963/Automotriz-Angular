@@ -1,0 +1,15 @@
+.table-wrapper {
+  width: 90%;
+  max-width: 2000px;
+  margin: 32px auto;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.full-width-table {
+  width: 100%;
+  border-collapse: collapse;
+}
