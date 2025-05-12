@@ -13,22 +13,20 @@ import { Subscription } from 'rxjs';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  isMenuOpen = false;
+ isMenuOpen = false;
   currentUser: string | null = null;
-  private userSubscription: Subscription | null = null;
+  currentUserFullName: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-    this.userSubscription = this.authService.currentUser$.subscribe(user => {
+  ngOnInit(): void {
+    this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
     });
-  }
-
-  ngOnDestroy() {
-    if (this.userSubscription) {
-      this.userSubscription.unsubscribe();
-    }
+    
+    this.authService.currentUserFullName$.subscribe(fullName => {
+      this.currentUserFullName = fullName;
+    });
   }
 
   toggleMenu() {
@@ -37,6 +35,5 @@ export class NavComponent {
 
   logout() {
     this.authService.logout();
-    this.isMenuOpen = false;
   }
 }
