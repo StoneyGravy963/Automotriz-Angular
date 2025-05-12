@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Auto } from '../auto';
 import { AUTOS } from '../misautos';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutoService {
 
-  private autos:Auto[] = AUTOS;
 
   constructor() { }
+
+
+  private autos:Auto[] = AUTOS;
 
   getAutos(): Auto[] {
     return this.autos;
