@@ -14,7 +14,7 @@ export class FormularioComponent {
   
   formData = {
     nombre: '',
-    service: '',
+    servicio: '',
     cita: '',
     acepta: false
   };
@@ -46,7 +46,7 @@ export class FormularioComponent {
   }
 
   
-  if (this.formData.service === 'default') {
+  if (this.formData.servicio === 'default') {
     alertify.error('Debe seleccionar un servicio válido');
     return;
   }
@@ -55,14 +55,14 @@ export class FormularioComponent {
 
   const datosAGuardar = {
     nombre: this.formData.nombre,
-    service: this.formData.service,
+    servicio: this.formData.servicio,
     cita: this.formData.cita,
     acepta: this.formData.acepta
   };
 
-  const reservasExistentes = JSON.parse(localStorage.getItem('reservasAutos') || '[]');
+  const reservasExistentes = JSON.parse(localStorage.getItem('formularioReserva') || '[]');
   reservasExistentes.push(datosAGuardar);
-  localStorage.setItem('reservasAutos', JSON.stringify(reservasExistentes));
+  localStorage.setItem('formularioReserva', JSON.stringify(reservasExistentes));
   
   alertify.success("Datos guardados exitosamente.");
   }

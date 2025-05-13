@@ -27,7 +27,7 @@ export class DashboardComponent {
   
 
   cargarDatos() {
-    this.reservas = JSON.parse(localStorage.getItem('reservasAutos') || '[]');
+    this.reservas = JSON.parse(localStorage.getItem('formularioReserva') || '[]');
     this.opiniones = JSON.parse(localStorage.getItem('formulariosOpinion') || '[]');
   }
 
@@ -37,7 +37,7 @@ export class DashboardComponent {
 
   eliminarReservaDesdeHijo(index: number) {
     this.reservas.splice(index, 1); 
-    localStorage.setItem('reservasAutos', JSON.stringify(this.reservas)); 
+    localStorage.setItem('formularioReserva', JSON.stringify(this.reservas)); 
     alertify.success("Reserva eliminada exitosamente.");
   }
 
