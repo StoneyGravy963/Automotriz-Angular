@@ -6,7 +6,7 @@ import { MecanicosComponent } from '../servicesComponents/mecanicos/mecanicos.co
 
 @Component({
   selector: 'app-services',
-  imports: [FormularioComponent,FormularioReactivoComponent,TablaComponent,MecanicosComponent],
+  imports: [FormularioComponent,TablaComponent,MecanicosComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
