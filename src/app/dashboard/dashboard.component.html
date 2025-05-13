@@ -1,11 +1,17 @@
-<div class="dashboard p-6 space-y-10 bg-gray-100 min-h-screen">
+<div class=" m-1.5 dashboard p-6 space-y-10 bg-gray-100 min-h-screen">
 
   <h1 class="text-3xl font-bold text-center text-gray-800">Panel de Administración</h1>
 
   <app-tabla-reservas
-    [reservas]="reservas"
-    (guardar)="guardarReservaDesdeHijo($event)"
-    (eliminar)="eliminarReservaDesdeHijo($event)">
-  </app-tabla-reservas>
+  [reservas]="reservas"
+  (guardar)="guardarReservaDesdeHijo($event)"
+  (eliminar)="eliminarReservaDesdeHijo($event)">
+</app-tabla-reservas>
+<br />
+<app-tabla-opiniones
+  [opiniones]="opiniones"
+  (guardar)="guardarOpinionDesdeHijo($event)"
+  (eliminar)="eliminarOpinionDesdeHijo($event)">
+</app-tabla-opiniones>
 
 </div>
