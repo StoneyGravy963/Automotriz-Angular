@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
- isMenuOpen = false;
+  isMenuOpen = false;
   currentUser: string | null = null;
   currentUserFullName: string | null = null;
 
