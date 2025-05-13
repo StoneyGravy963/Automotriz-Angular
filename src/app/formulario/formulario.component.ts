@@ -11,13 +11,26 @@ declare let alertify: any;
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
-  
+  servicios: string[] = [
+  'Cambio de aceite y filtros',
+  'Revision y ajuste de frenos',
+  'Afinacion de motor',
+  'Diagnostico Computarizado',
+  'Cambio de bateria',
+  'Alineacion y balanceo',
+  'Cambio de llantas',
+  'Suspencion',
+  'Sistema de aire acondicionado',
+  'Lavado y detallado automotriz'
+];  
+
+
   formData = {
     nombre: '',
     servicio: '',
     cita: '',
     acepta: false
-  };
+  }; 
   
   enviarFormulario() {
 
