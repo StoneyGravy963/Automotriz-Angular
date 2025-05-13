@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormularioComponent } from "../formulario/formulario.component";
-import { FormularioReactivoComponent } from "../formulario-reactivo/formulario-reactivo.component";
+// import { FormularioReactivoComponent } from "../formulario-reactivo/formulario-reactivo.component";
 import { TablaComponent } from '../servicesComponents/tabla/tabla.component';
 import { MecanicosComponent } from '../servicesComponents/mecanicos/mecanicos.component';
 
