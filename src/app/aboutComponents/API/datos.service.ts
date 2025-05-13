@@ -10,6 +10,6 @@ export class DatosService {
   constructor(private http:HttpClient) { }
   retornar(){
     // return this.http.get("https://segundoparcial2.free.beeceptor.com").pipe(take(1));
-    return this.http.get<any>('https://segundoparcial2.free.beeceptor.com');
+    return this.http.get<any>('https://segundoparcial.free.beeceptor.com');
   }  
 }
