@@ -1,0 +1,13 @@
+<h2 class="section-title">Mecánicos</h2>
+
+<div class="mechanics-container">
+  @for (mecanico of mecanicos; track mecanico.nombre) {
+    <mat-card class="mechanic-card">
+      <img mat-card-image [src]="mecanico.foto" alt="Foto de {{ mecanico.nombre }}">
+      <mat-card-content>
+        <h3>{{ mecanico.nombre }}</h3>
+        <p>{{ mecanico.especialidad }}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>
