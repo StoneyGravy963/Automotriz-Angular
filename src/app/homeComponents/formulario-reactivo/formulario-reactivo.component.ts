@@ -34,7 +34,7 @@ export class FormularioReactivoComponent {
     console.log('Formulario guardado correctamente:', nuevaOpinion);
     alertify.success("cita guardada exitosamente.");
     
-    this.form.reset();
+    
   }
 }
 }

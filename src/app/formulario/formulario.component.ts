@@ -55,7 +55,7 @@ export class FormularioComponent {
 
   const datosAGuardar = {
     nombre: this.formData.nombre,
-    servicio: this.formData.service,
+    service: this.formData.service,
     cita: this.formData.cita,
     acepta: this.formData.acepta
   };
