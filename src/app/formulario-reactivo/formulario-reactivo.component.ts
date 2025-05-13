@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 
+
+declare let alertify: any;
+
 @Component({
   selector: 'app-formulario-reactivo',
   imports: [ReactiveFormsModule,CommonModule],
@@ -27,7 +30,7 @@ export class FormularioReactivoComponent {
       const formData = this.form.value;
       localStorage.setItem('formularioOpinion', JSON.stringify(formData));
       console.log('Datos del formulario guardados en localStorage:', formData);
-
+      alertify.success("cita guardada exitosamente.");
       
     }
   }

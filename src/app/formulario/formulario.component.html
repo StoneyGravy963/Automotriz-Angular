@@ -1,40 +1,57 @@
-<div class="Formulario">
-  <form #formRef="ngForm" (ngSubmit)="enviarFormulario()">
-    <fieldset>
-      <div class="label-input">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" [(ngModel)]="formData.nombre" required>
-      </div>
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-md">
+  <form #formRef="ngForm" (ngSubmit)="enviarFormulario()" class="space-y-6">
+    <h1 class="text-2xl font-bold text-center text-blue-700 mb-4">Solicita tu cita para cualquier servicio</h1>
 
-      <div class="label-input">
-        <label for="cita">Día de la entrega</label>
-        <input id="cita" name="cita" type="date" [(ngModel)]="formData.cita" required>
-      </div>
 
-<div class="label-input">
-        <label for="auto">Auto</label>
-        <select id="auto" name="auto" [(ngModel)]="formData.auto" required>
-          <option value="default">--Seleccione una opcion--</option>
-          <option value="HondaCivic">Honda Civic</option>
-          <option value="ToyotaCorolla">Toyota Corolla</option>
-          <option value="FordMustang">Ford Mustag</option>
-          <option value="TeslaModel3">Tesla Model 3</option>
-          <option value="HyundaiTucson">Hyundai Tucson</option>
-          <option value="BMWX3">BMW X3</option>
-          <option value="Audi A3">Audi A3</option>
-          <option value="JeepWrangler">Jeep Wrangler</option>
-          <option value="VolkswagenGolf">Volkswagen Golf</option>
-          <option value="MazdACX-5">Mazda CX-5</option>
-        </select>
-      </div>
+    <div>
+      <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+      <input id="nombre" name="nombre" type="text" [(ngModel)]="formData.nombre" required
+             class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    </div>
 
-      
-      <div class="label-input">
-        <input id="acepta" type="checkbox" name="terminos" [(ngModel)]="formData.acepta">
-        <label for="acepta">Acepto términos y condiciones</label>
-      </div>
 
-      <button class="boton-buscar" id="buscar" type="submit" [disabled]="!formRef.valid">Enviar</button>
-    </fieldset>
+    <div>
+      <label for="cita" class="block text-sm font-medium text-gray-700">Día de la cita</label>
+      <input id="cita" name="cita" type="date" [(ngModel)]="formData.cita" required
+             class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    </div>
+
+
+    <div>
+      <label for="auto" class="block text-sm font-medium text-gray-700">Servicio</label>
+      <select id="auto" name="auto" [(ngModel)]="formData.service" required
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="default">--Seleccione una opción--</option>
+        <option value="Aceite y filtros">Cambio de aceite y filtros</option>
+        <option value="Ajuste de frenos">Revisión y ajuste de frenos</option>
+        <option value="Afinacion de motor">Afinación de motor</option>
+        <option value="Diagnostico Computarizado">Diagnóstico computarizado</option>
+        <option value="Cambio de bateria">Cambio de batería</option>
+        <option value="Alineacion y balanceo">Alineación y balanceo</option>
+        <option value="Cambio de llantas">Cambio de llantas</option>
+        <option value="Sistema de suspencion">Sistema de suspensión</option>
+        <option value="Sistema de aire acondicionado">Sistema de aire acondicionado</option>
+        <option value="Lavado y detallado automotriz">Lavado y detallado automotriz</option>
+      </select>
+    </div>
+
+
+    <div class="flex items-start space-x-3">
+      <div class="flex items-center h-5 w-5">
+        <input id="acepta" type="checkbox" name="terminos" [(ngModel)]="formData.acepta"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+      </div>
+      <div class="text-sm">
+        <label for="acepta" class="font-medium text-gray-700">Acepto los <a href="#" class="text-blue-600 hover:underline">términos y condiciones</a></label>
+      </div>
+    </div>
+
+   
+    <div class="text-center">
+      <button id="buscar" type="submit" [disabled]="!formRef.valid"
+              class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition">
+        Enviar
+      </button>
+    </div>
   </form>
 </div>

@@ -1,39 +1,55 @@
-<div class="contenedor">
-  <h2>Formulario de Opinión</h2>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class=" my-1.5 max-w-xl mx-auto bg-white p-6 rounded-xl shadow-xl">
+  <h2 class="text-2xl font-bold mb-6 text-center text-blue-700">Formulario de Opinión</h2>
 
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
     
-    <input type="email" formControlName="email" placeholder="Email" />
-    <div class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].touched" style="color:red;">
-      Ingresa un email válido
-    </div>
-
     
-    <input type="number" formControlName="age" placeholder="Edad" />
-    <div class="error" *ngIf="form.controls['age'].invalid && form.controls['age'].touched" style="color:red;">
-      Solo las personas mayores a 18 pueden opinar
+    <div>
+      <input type="email" formControlName="email" placeholder="Email"
+             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <div class="text-red-500 text-sm mt-1" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+        Ingresa un email válido
+      </div>
     </div>
 
-    
-    <label>
-      <input type="radio" value="Masculino" formControlName="gender" /> Masculino
-    </label>
-    <label>
-      <input type="radio" value="Femenino" formControlName="gender" /> Femenino
-    </label>
-    <label>
-      <input type="radio" value="Otro" formControlName="gender" /> Otro
-    </label>
-    <div class="error" *ngIf="form.controls['gender'].invalid && form.controls['gender'].touched" style="color:red;">
-      Selecciona un género
+    <div>
+      <input type="number" formControlName="age" placeholder="Edad"
+             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      <div class="text-red-500 text-sm mt-1" *ngIf="form.controls['age'].invalid && form.controls['age'].touched">
+        Solo las personas mayores a 18 pueden opinar
+      </div>
     </div>
 
-    <!-- Opinión -->
-    <textarea formControlName="opinion" placeholder="Escribe tu opinión aquí"></textarea>
-    <div class="error" *ngIf="form.controls['opinion'].invalid && form.controls['opinion'].touched" style="color:red;">
-      La opinión es obligatoria
+    <div>
+      <label class="mr-4">
+        <input type="radio" value="Masculino" formControlName="gender" class="mr-1" /> Masculino
+      </label>
+      <label class="mr-4">
+        <input type="radio" value="Femenino" formControlName="gender" class="mr-1" /> Femenino
+      </label>
+      <label>
+        <input type="radio" value="Otro" formControlName="gender" class="mr-1" /> Otro
+      </label>
+      <div class="text-red-500 text-sm mt-1" *ngIf="form.controls['gender'].invalid && form.controls['gender'].touched">
+        Selecciona un género
+      </div>
     </div>
 
-    <button type="submit" [disabled]="form.invalid">Enviar</button>
+    <div>
+      <textarea formControlName="opinion" placeholder="Escribe tu opinión aquí"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"></textarea>
+      <div class="text-red-500 text-sm mt-1" *ngIf="form.controls['opinion'].invalid && form.controls['opinion'].touched">
+        La opinión es obligatoria
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit"
+              [disabled]="form.invalid"
+              class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition">
+        Enviar
+      </button>
+    </div>
   </form>
 </div>

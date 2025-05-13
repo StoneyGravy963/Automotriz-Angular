@@ -1,0 +1,26 @@
+<h2 class="text-xl font-semibold mb-2">Reservas</h2>
+<table class="table-auto w-full border-collapse border border-gray-300">
+  <thead>
+    <tr class="bg-gray-100">
+      <th class="border px-4 py-2">Nombre</th>
+      <th class="border px-4 py-2">Servicio</th>
+      <th class="border px-4 py-2">Fecha</th>
+      <th class="border px-4 py-2">Acepta</th>
+      <th class="border px-4 py-2">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reservas; let i = index">
+      <td><input [(ngModel)]="reserva.nombre" class="border px-2 py-1 w-full" /></td>
+      <td><input [(ngModel)]="reserva.servicio" class="border px-2 py-1 w-full" /></td>
+      <td><input type="date" [(ngModel)]="reserva.cita" class="border px-2 py-1 w-full" /></td>
+      <td class="text-center">
+        <input type="checkbox" [(ngModel)]="reserva.acepta" />
+      </td>
+      <td class="text-center">
+        <button class="bg-blue-500 text-white px-2 py-1 mr-1 rounded" (click)="guardarReserva(i)">Guardar</button>
+        <button class="bg-red-500 text-white px-2 py-1 rounded" (click)="eliminarReserva(i)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
