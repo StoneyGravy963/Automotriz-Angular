@@ -33,6 +33,7 @@ export class DashboardComponent {
 
   guardarReservaDesdeHijo(index: number) {
     localStorage.setItem('formularioReserva', JSON.stringify(this.reservas));
+    alertify.success("Reserva modificada exitosamente.");
   }
 
   eliminarReservaDesdeHijo(index: number) {
@@ -43,11 +44,13 @@ export class DashboardComponent {
 
   guardarOpinionDesdeHijo(index: number) {
     localStorage.setItem('formulariosOpinion', JSON.stringify(this.opiniones));
+    alertify.success("Opinion modificado exitosamente.");
   }
 
   eliminarOpinionDesdeHijo(index: number) {
     this.opiniones.splice(index, 1);
     localStorage.setItem('formulariosOpinion', JSON.stringify(this.opiniones));
+    alertify.success("Opinion eliminada exitosamente.");
   }
 
   goToTemplateData() {

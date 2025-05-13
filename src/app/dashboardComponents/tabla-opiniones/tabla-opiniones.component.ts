@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-tabla-opiniones',
   imports: [CommonModule,FormsModule],
@@ -16,6 +17,7 @@ export class TablaOpinionesComponent {
 
   guardarOpinion(index: number) {
     this.guardar.emit(index);
+
   }
 
   eliminarOpinion(index: number) {
