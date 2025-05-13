@@ -1,10 +1,10 @@
-><div class="container mx-auto p-4 lg:p-8">
+<div class="container mx-auto p-4 lg:p-8">
     @if (auto) {
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
         <!-- cabecerar -->
         <div class="relative h-64 lg:h-96">
-          <img 
-            [src]="auto.image" 
+          <img
+            [src]="auto.image"
             [alt]="auto.brand + ' ' + auto.name"
             class="w-full h-full object-cover"
           >
@@ -13,7 +13,7 @@
             <p class="text-white/90">{{ auto.year }} · {{ auto.color }}</p>
           </div>
         </div>
-        
+       
         <!-- informacion -->
         <div class="p-6">
           <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-6">
@@ -29,9 +29,9 @@
               <span class="text-2xl font-bold text-primary">{{ auto.price | currency }}</span>
             </div>
           </div>
-          
+         
           <mat-divider class="mb-6"></mat-divider>
-          
+         
           <!-- desc -->
           <mat-card appearance="outlined" class="mb-6 p-4">
             <mat-card-header>
@@ -42,7 +42,7 @@
               <p class="text-gray-700">{{ auto.description }}</p>
             </mat-card-content>
           </mat-card>
-          
+         
           <!-- caracteristicas -->
           <h3 class="text-xl font-bold mb-4">Características técnicas</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -63,14 +63,11 @@
               <span>Transmisión: Automática</span>
             </div>
           </div>
-          
+         
           <!-- Botones de acción -->
           <div class="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3">
-            <button mat-raised-button color="accent" class="flex items-center justify-center">
+            <button mat-raised-button color="accent" class="flex items-center justify-center" (click)="mostrarContacto()">
               <mat-icon class="mr-1">phone</mat-icon> CONTACTAR
-            </button>
-            <button mat-raised-button color="primary" class="flex items-center justify-center">
-              <mat-icon class="mr-1">shopping_cart</mat-icon> RESERVAR
             </button>
             <a routerLink="/busqueda" mat-button class="flex items-center justify-center">
               <mat-icon class="mr-1">arrow_back</mat-icon> VOLVER
