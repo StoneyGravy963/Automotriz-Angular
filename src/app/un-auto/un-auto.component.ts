@@ -4,12 +4,12 @@ import { AutoService } from '../shared/auto.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-// Angular Material
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-un-auto',
@@ -28,7 +28,7 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class UnAutoComponent {
   auto!: Auto;
-  
+ 
   constructor(
     public autoService: AutoService,
     public activatedRoute: ActivatedRoute
@@ -38,8 +38,17 @@ export class UnAutoComponent {
         this.auto = this.autoService.getUnAuto(params['id']);
       } catch (error) {
         console.error('Auto no encontrado:', error);
-        // El template ya maneja el caso cuando auto es undefined
       }
+    });
+  }
+
+  mostrarContacto() {
+    Swal.fire({
+      title: 'Información de contacto',
+      text: 'Contacta con tu sucursal más cercana o al 4491234567',
+      icon: 'info',
+      confirmButtonText: 'Entendido',
+      confirmButtonColor: '#3f51b5'
     });
   }
 }

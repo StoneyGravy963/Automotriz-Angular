@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, NavComponent,CommonModule],
+  imports: [MatToolbarModule,CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

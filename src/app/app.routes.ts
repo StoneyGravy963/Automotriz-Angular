@@ -16,12 +16,12 @@ export const routes: Routes = [
     { path: 'services', component: ServicesComponent },
     { path: 'autos', component: AutosComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'dashboard', component: DashboardComponent,canActivate: [authGuard]},
+    { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
     { path: 'panel-control', component: PanelControlComponent },
     { path: 'auto/:id', component: UnAutoComponent },
     // { path: '**', redirectTo: 'home' },
     { path: 'busqueda', component: BusquedaAutosComponent },
-    { path: '', redirectTo: '/busqueda', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 
 ];

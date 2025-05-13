@@ -14,17 +14,17 @@ export class MecanicosComponent {
   {
     nombre: 'Adal Yahir de Luna Nieves ID:335944',
     especialidad: 'Especialista en frenos y suspensión',
-    foto: '../yahir.jpg'
+    foto: 'assets/img/yahir.jpg'
   },
   {
     nombre: 'Elías López Gutiérrez ID:210356',
     especialidad: 'Diagnóstico computarizado y electrónica',
-    foto: '../elias.jpg'
+    foto: 'assets/img/elias.jpg'
   },
   {
     nombre: 'Jaime Iván López Gutiérrez ID:232901',
     especialidad: 'Cambio de aceite y afinaciones',
-    foto: '../jaime.jpg'
+    foto: 'assets/img/jaime.jpg'
   }
 ];
 

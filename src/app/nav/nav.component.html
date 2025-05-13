@@ -1,4 +1,4 @@
-<nav class="bg-white border-b border-gray-300 px-4 py-3 flex items-center justify-between sticky top-16 z-10 shadow-sm">
+<nav class="bg-white border-b border-gray-300 px-4 py-3 flex items-center justify-between sticky top-16  shadow-sm">
   <div class="md:hidden">
     <button (click)="toggleMenu()" class="text-gray-700 focus:outline-none">
       @if (!isMenuOpen) {
@@ -26,7 +26,7 @@
     }
     @if (currentUser) {
     <a [routerLink]="['/dashboard']">
-      <button mat-raised-button color="accent" class="btn-primary">
+      <button mat-raised-button color="primary" class="btn-primary">
         {{ currentUser }}
       </button>
     </a>
@@ -53,7 +53,7 @@
   @if (currentUser) {
   <div class="flex flex-col space-y-4">
     <a [routerLink]="['/dashboard']" (click)="toggleMenu()">
-      <button mat-raised-button color="accent" class="btn-primary w-full">
+      <button mat-raised-button color="primary" class="btn-primary w-full">
         {{ currentUser }}
       </button>
     </a>
